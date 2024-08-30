@@ -48,9 +48,9 @@ const CreatePodcast = () => {
   const [audioDuration, setAudioDuration] = useState(0);
 
   const [voiceType, setVoiceType] = useState<string | null>(null);
-  const [voicePrompt, setvoicePrompt] = useState("");
+  const [voicePrompt, setVoicePrompt] = useState("");
 
-  const [isSubmitting, setisSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -83,11 +83,11 @@ const CreatePodcast = () => {
               render={({ field }) => (
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-white-1 font-bold">
-                    Username
+                    Title
                   </FormLabel>
                   <FormControl>
                     <Input
-                      className="input-class focus-visible:ring-orange-1"
+                      className="input-class focus-visible:ring-offset-orange-1"
                       placeholder="JSM Pro Podcsst"
                       {...field}
                     />
@@ -100,14 +100,16 @@ const CreatePodcast = () => {
               <Label className="font-bold text-white-1">Select AI Voice</Label>
               <Select onValueChange={(value) => setVoiceType(value)}>
                 <SelectTrigger
-                  className={cn("w-full border-none bg-black-1 text-gray-1")}
+                  className={cn(
+                    "w-full border-none bg-black-1 text-gray-1 focus-visible:ring-offset-orange-1"
+                  )}
                 >
                   <SelectValue
                     placeholder="Select AI Voice"
                     className="placeholder:text-gray-1"
                   />
                 </SelectTrigger>
-                <SelectContent className="border-none bg-black-1 font-bold text-white-1 focus:ring-orange-1">
+                <SelectContent className="border-none bg-black-1 font-bold text-white-1 focus-visible:ring-offset-orange-1">
                   {voiceCategories.map((category) => (
                     <SelectItem
                       key={category}
@@ -137,7 +139,7 @@ const CreatePodcast = () => {
                   </FormLabel>
                   <FormControl>
                     <Textarea
-                      className="input-class focus-visible:ring-orange-1"
+                      className="input-class focus-visible:ring-offset-orange-1"
                       placeholder="Write a short podcast description"
                       {...field}
                     />
@@ -148,7 +150,15 @@ const CreatePodcast = () => {
             />
           </div>
           <div className="flex flex-col pt-10">
-            <GeneratePodcast />
+            <GeneratePodcast
+              setAudioStorageId={setAudioStorageId}
+              setAudio={setAudioUrl}
+              voiceType={voiceType!}
+              audio={audioUrl}
+              voicePrompt={voicePrompt}
+              setVoicePrompt={setVoicePrompt}
+              setAudioDuration={setAudioDuration}
+            />
             <GenerateThumbnail />
             <div className="mt-10 w-full">
               <Button
