@@ -28,7 +28,7 @@ import { Button } from "@/components/ui/button";
 import { Loader } from "lucide-react";
 import { Id } from "@/convex/_generated/dataModel";
 
-const voiceCategories = ["alloy", "shimmer", "Nova", "Echo", "Fable", "Onyx"];
+const voiceCategories = ["alloy", "shimmer", "nova", "echo", "fable", "onyx"];
 
 const formSchema = z.object({
   podcastTitle: z.string().min(2),
@@ -109,7 +109,7 @@ const CreatePodcast = () => {
                     className="placeholder:text-gray-1"
                   />
                 </SelectTrigger>
-                <SelectContent className="border-none bg-black-1 font-bold text-white-1 focus-visible:ring-offset-orange-1">
+                <SelectContent className="border-none bg-black-1 font-bold text-white-1 focus:ring-orange-1">
                   {voiceCategories.map((category) => (
                     <SelectItem
                       key={category}
