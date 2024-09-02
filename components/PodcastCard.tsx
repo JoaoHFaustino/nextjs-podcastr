@@ -1,11 +1,7 @@
+import { PodcastCardProps } from "@/types";
 import Image from "next/image";
 import React from "react";
-interface PodcastCardProps {
-  imgUrl: string;
-  title: string;
-  description: string;
-  podcastId: number;
-}
+
 const PodcastCard = ({
   imgUrl,
   title,
