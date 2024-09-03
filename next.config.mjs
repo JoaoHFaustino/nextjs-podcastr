@@ -9,6 +9,9 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "artful-turtle-607.convex.cloud",
+      },      {
+        protocol: "https",
+        hostname: "img.clerk.com",
       }
     ],
   },
