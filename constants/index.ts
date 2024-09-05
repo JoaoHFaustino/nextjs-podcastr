@@ -7,12 +7,12 @@ export const sidebarLinks = [
   {
     imgURL: "/icons/discover.svg",
     route: "/discover",
-    label: "Discover",
+    label: "Descubra",
   },
   {
     imgURL: "/icons/microphone.svg",
     route: "/create-podcast",
-    label: "Create Podcast",
+    label: "Criar Podcast",
   },
 ];
 

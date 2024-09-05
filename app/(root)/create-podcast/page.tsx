@@ -110,7 +110,7 @@ const CreatePodcast = () => {
 
   return (
     <section className="mt-10 flex flex-col">
-      <h1 className="text-20 font-bold text-white-1">Create Podcast</h1>
+      <h1 className="text-20 font-bold text-white-1">Criar Podcast</h1>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -123,7 +123,7 @@ const CreatePodcast = () => {
               render={({ field }) => (
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-white-1 font-bold">
-                    Title
+                    Título
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -137,7 +137,9 @@ const CreatePodcast = () => {
               )}
             />
             <div className="flex flex-col gap-2.5">
-              <Label className="font-bold text-white-1">Select AI Voice</Label>
+              <Label className="font-bold text-white-1">
+                Selecionar uma voz IA
+              </Label>
               <Select onValueChange={(value) => setVoiceType(value)}>
                 <SelectTrigger
                   className={cn(
@@ -145,7 +147,7 @@ const CreatePodcast = () => {
                   )}
                 >
                   <SelectValue
-                    placeholder="Select AI Voice"
+                    placeholder="Selecionar uma voz IA"
                     className="placeholder:text-gray-1"
                   />
                 </SelectTrigger>
@@ -175,12 +177,12 @@ const CreatePodcast = () => {
               render={({ field }) => (
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-white-1 font-bold">
-                    Description
+                    Descrição
                   </FormLabel>
                   <FormControl>
                     <Textarea
                       className="input-class focus-visible:ring-offset-orange-1"
-                      placeholder="Write a short podcast description"
+                      placeholder="Escreva uma breve descrição do podcast"
                       {...field}
                     />
                   </FormControl>
@@ -213,11 +215,11 @@ const CreatePodcast = () => {
               >
                 {isSubmitting ? (
                   <>
-                    Submitting
+                    Enviando
                     <Loader size={20} className="animate-spin ml-2"></Loader>
                   </>
                 ) : (
-                  "Submit & Publish Podcast"
+                  "Enviar & Publicar Podcast"
                 )}
               </Button>
             </div>

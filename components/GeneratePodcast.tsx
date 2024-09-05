@@ -32,7 +32,7 @@ const useGeneratePodcast = ({
 
     if (!voicePrompt) {
       toast({
-        title: "Please provide a voiceType to generate a podcast",
+        title: "Por favor, informe uma vez para gerar o podcast",
       });
       return setIsGenerating(false);
     }
@@ -56,12 +56,12 @@ const useGeneratePodcast = ({
       setAudio(audioUrl!);
       setIsGenerating(false);
       toast({
-        title: "Podcast generated successfully",
+        title: "Podcast criado com sucesso",
       });
     } catch (error) {
       console.log("Error generating podcast", error);
       toast({
-        title: "Error creating a podcast",
+        title: "Error ao criar o podcast",
         variant: "destructive",
       });
       setIsGenerating(false);
@@ -78,11 +78,11 @@ const GeneratePodcast = (props: GeneratePodcastProps) => {
     <div>
       <div className="flex flex-col gap-2.5">
         <Label className="text-16 font-bold text-white-1">
-          AI Prompt to generate Podcast
+          Gerar áudio do podcast com IA
         </Label>
         <Textarea
           className="input-class font-light focus-visible:ring-offset-orange-1"
-          placeholder="Provide text to generate audio"
+          placeholder="Escreva o texto para gerar o áudio "
           rows={5}
           value={props.voicePrompt}
           onChange={(e) => props.setVoicePrompt(e.target.value)}
@@ -96,11 +96,11 @@ const GeneratePodcast = (props: GeneratePodcastProps) => {
         >
           {isGenerating ? (
             <>
-              Generating
+              Gerando
               <Loader size={20} className="animate-spin ml-2" />
             </>
           ) : (
-            "Generate"
+            "Gerar áudio"
           )}
         </Button>
       </div>

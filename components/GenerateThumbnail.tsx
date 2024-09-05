@@ -53,11 +53,11 @@ const GenerateThumbnail = ({
       setIsImageLoading(false);
 
       toast({
-        title: "Thumbnail generated successfully",
+        title: "Thumbnail gerada com sucesso",
       });
     } catch (error) {
       console.log(error);
-      toast({ title: "Error generating thumbnail", variant: "destructive" });
+      toast({ title: "Error ao gerar thumbnail", variant: "destructive" });
     }
   };
 
@@ -69,7 +69,7 @@ const GenerateThumbnail = ({
       handleImage(blob, `thumbnail-${uuidv4()}`);
     } catch (error) {
       console.log(error);
-      toast({ title: "Error generating thumbnail", variant: "destructive" });
+      toast({ title: "Error ao gerar thumbnail", variant: "destructive" });
     }
   };
 
@@ -102,7 +102,7 @@ const GenerateThumbnail = ({
             "bg-black-6": isAiThumbnail,
           })}
         >
-          Use AI to generate thumbnail
+          Use IA para gerar a thumbnail
         </Button>
         <Button
           type="button"
@@ -112,18 +112,18 @@ const GenerateThumbnail = ({
             "bg-black-6": !isAiThumbnail,
           })}
         >
-          Upload custom image
+          Enviar imagem customizada
         </Button>
       </div>
       {isAiThumbnail ? (
         <div className="flex flex-col gap-5">
           <div className="mt-5 flex flex-col gap-2.5">
             <Label className="text-16 font-bold text-white-1">
-              AI Prompt to generate Thumbnail
+              Gerar Thumbnail do podcast com IA
             </Label>
             <Textarea
               className="input-class font-light focus-visible:ring-offset-orange-1"
-              placeholder="Provide text to generate thumbnail"
+              placeholder="Escreva o texto para gerar a thumbnail"
               rows={5}
               value={imagePrompt}
               onChange={(e) => setImagePrompt(e.target.value)}
@@ -137,11 +137,11 @@ const GenerateThumbnail = ({
             >
               {isImageLoading ? (
                 <>
-                  Generating
+                  Gerando
                   <Loader size={20} className="animate-spin ml-2" />
                 </>
               ) : (
-                "Generate"
+                "Gerar Thumbnail"
               )}
             </Button>
           </div>
@@ -168,7 +168,9 @@ const GenerateThumbnail = ({
             </div>
           )}
           <div className="flex flex-col items-center gap-1">
-            <h2 className="text-12 font-bold text-orange-1">Click to upload</h2>
+            <h2 className="text-12 font-bold text-orange-1">
+              Clique para enviar
+            </h2>
             <p className="text-12 font-normal text-gray-1">
               SVG, PNG, JPG, or GIF (max. 1080x1080px)
             </p>
