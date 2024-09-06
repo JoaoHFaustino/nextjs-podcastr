@@ -14,6 +14,12 @@ Os usuários podem gerar podcasts com base em conteúdo gerado por IA, incluindo
 - `Clerk:` Gerencia a autenticação de usuários e sessões.
 - `OpenAI:` Fornece APIs para geração de áudio e imagens para o conteúdo dos podcasts.
 
+## Imagens do projeto
+![alt text](./public/images/home.png)
+![alt text](./public/images/detalhes-podcast.png)
+![alt text](./public/images/criar-podcast.png)
+![alt text](./public/images/perfil.png)
+![alt text](./public/images/descubra.png)
 ## Instalação
 
 ```bash
